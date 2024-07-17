@@ -24,4 +24,4 @@ build/
 
 # Logs de debug
 npm-debug.log*
-yarn-error.log*
+yarn-error.log*.env
