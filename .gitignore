@@ -1,0 +1,27 @@
+# Dependências do Node
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Arquivo de variáveis de ambiente
+.env
+
+# Relatórios de cobertura de teste
+coverage/
+
+# Diretórios de build
+dist/
+build/
+
+# Configurações de IDEs
+.idea/
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+
+# Logs de debug
+npm-debug.log*
+yarn-error.log*
