@@ -1,14 +1,18 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+const router = require("./routers/index");
 
-app.listen(port, (error) =>{
-    if(error){
+router(app);
+
+app.listen(port, (error) => {
+    if (error) {
         console.log("Error");
         return;
     }
     console.log("Ok!");
 });
+
 
 // Crie uma API RESTful simples usando Node.js e Express. A API deve permitir
 // operações CRUD (Create, Read, Update, Delete)
