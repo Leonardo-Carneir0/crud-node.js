@@ -7,8 +7,7 @@ class ProdutoController {
     }
 
     criar(produto) {
-        // Aqui você pode adicionar lógica para salvar o produto
-        return "Salvando Produto...";
+        return ProdutoModel.criar(produto);
     }
 
     atualizar(id, produto) {

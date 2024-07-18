@@ -10,9 +10,11 @@ router.get("/produtos", (req, res) => {
 });
 
 router.post("/produtos", (req, res) => {
-    const resposta = produtoController.criar(req.body);
-    res.send(resposta);
+    produtoController.criar(req.body)
+        .then(produto => res.status(201).json(produto))
+        .catch(error => res.status(400).json({ mensagem: error.message }));
 });
+
 
 router.put("/produtos/:id", (req, res) => {
     const { id } = req.params;

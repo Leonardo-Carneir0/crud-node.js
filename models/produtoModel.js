@@ -17,6 +17,20 @@ class ProdutoModel {
         });
     }
 
+    criar(produto) {
+        const sql = "INSERT INTO produtos SET ?";
+        return new Promise((resolve, reject) => {
+            conexao.query(sql, produto, (error, resposta) => {
+                if (error) {
+                    console.log("Erro ao criar produto...");
+                    reject(error);
+                } else {
+                    console.log("Produto criado com sucesso");
+                    resolve({ id: resposta.insertId, ...produto });
+                }
+            });
+        });
+    }
     // Adicione outros métodos conforme necessário, como salvar, atualizar e deletar
 }
 
