@@ -15,10 +15,8 @@ class ProdutoController {
         return ProdutoModel.atualizar(id, produto);
     }
 
-
     apagar(id) {
-        // Aqui você pode adicionar lógica para deletar o produto
-        return `Deletando Produto de ID: ${id}...`;
+        return ProdutoModel.apagar(id);
     }
 }
 

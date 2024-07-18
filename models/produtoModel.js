@@ -46,7 +46,20 @@ class ProdutoModel {
             });
         });
     }
-    // Adicione outros métodos conforme necessário, como salvar, atualizar e deletar
+    apagar(id) {
+        const sql = "DELETE FROM produtos WHERE id = ?";
+        return new Promise((resolve, reject) => {
+            conexao.query(sql, id, (error, resposta) => {
+                if (error) {
+                    console.log("Erro ao deletar produto...");
+                    reject(error);
+                } else {
+                    console.log("Produto deletado com sucesso");
+                    resolve({ id });
+                }
+            });
+        });
+    }    
 }
 
 module.exports = new ProdutoModel();

@@ -25,8 +25,8 @@ router.put("/produtos/:id", (req, res) => {
 
 router.delete("/produtos/:id", (req, res) => {
     const { id } = req.params;
-    const resposta = produtoController.apagar(id);
-    res.send(resposta);
+    produtoController.apagar(id)
+        .then(() => res.status(204).send())
+        .catch(error => res.status(400).json({ mensagem: error.message }));
 });
-
 module.exports = router;
