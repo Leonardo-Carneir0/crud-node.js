@@ -18,8 +18,9 @@ router.post("/produtos", (req, res) => {
 
 router.put("/produtos/:id", (req, res) => {
     const { id } = req.params;
-    const resposta = produtoController.atualizar(id, req.body);
-    res.send(resposta);
+    produtoController.atualizar(id, req.body)
+        .then(produto => res.status(200).json(produto))
+        .catch(error => res.status(400).json({ mensagem: error.message }));
 });
 
 router.delete("/produtos/:id", (req, res) => {

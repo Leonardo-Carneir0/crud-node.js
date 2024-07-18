@@ -1,4 +1,5 @@
-// controllers/produtoController.js
+const { Router } = require("express");
+const router = Router();
 const ProdutoModel = require("../models/produtoModel");
 
 class ProdutoController {
@@ -11,9 +12,9 @@ class ProdutoController {
     }
 
     atualizar(id, produto) {
-        // Aqui você pode adicionar lógica para atualizar o produto
-        return `Alterando Produto de ID: ${id}...`;
+        return ProdutoModel.atualizar(id, produto);
     }
+
 
     apagar(id) {
         // Aqui você pode adicionar lógica para deletar o produto
